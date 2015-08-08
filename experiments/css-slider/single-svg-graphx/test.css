@@ -1,0 +1,20 @@
+figure .dia {
+    width: 20em;
+    height: 20em; /* 1:1 aspect ratio */
+    display: none;
+}
+
+figure .dia:target {
+    display: inline;
+}
+
+figure .btn {
+    width: 1em;
+    height: 1em; /* 1:1 aspect ratio */
+}
+
+#slide-1:target ~ .slides-nav a[href="#slide-1"] .btn,
+#slide-2:target ~ .slides-nav a[href="#slide-2"] .btn,
+#slide-3:target ~ .slides-nav a[href="#slide-3"] .btn {
+    fill: #0000ff;
+}

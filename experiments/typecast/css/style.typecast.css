@@ -1,0 +1,124 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    font-size: 19px;
+    line-height: 1.618em;
+    font-family: "Alegreya", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #2d2d2d;
+    padding: 50px 0;
+}
+
+.page-wrapper {
+    margin: 0 auto;
+    display: block;
+    white-space: nowrap;
+    text-align: center;
+    padding-bottom: 20px;
+    min-height: 100%;
+    width: auto;
+    max-width: none;
+}
+
+.page-wrapper div {
+    text-align: left;
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 2%;
+    max-width: 760px; 
+    width: 760px;     
+}
+/*
+header, main, footer {
+    text-align: left;
+    white-space: normal;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 2%;
+    max-width: 760px; 
+    width: 760px;     
+}
+*/ 
+/* TODO: relativise */
+
+h1 {
+    font-size: 4.4em;
+    line-height: 0.928em;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: small-caps;
+    text-align: center;
+}
+
+#slogan {
+    text-align: center;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    margin-top: 27px;
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.42em;
+}
+
+.one-liner-intro {
+    font-size: 1.3em;
+    border-top: 1px;
+    border-bottom: 1px;
+    padding: 1.154em;
+    text-align: center;
+    border-style: solid;
+    line-height: 1.5em;
+    margin: 1.038em 0px;
+}
+
+.pull-quote {
+    padding-left: 10px;
+    border-style: solid;
+    border-left-width: 3px;
+    color: #333333;  /* rgba(51, 51, 51, 1.00); */
+    font-size: 0.95em;
+    line-height: 1.421em;
+    margin: 0px 0px 1.421em 0px;
+}
+
+p {
+    font-size: 0.95em;
+    line-height: 1.421em;
+    color: #5b5b5b;  /* rgba(51, 51, 51, 0.80); */
+    margin: 0px 0px 1.421em 0px;
+}
+
+h2 {
+    font-size: 1.45em;
+    line-height: 0.931em;
+    margin: 0px 0px 0.931em 0px;
+    font-variant: small-caps;
+}
+

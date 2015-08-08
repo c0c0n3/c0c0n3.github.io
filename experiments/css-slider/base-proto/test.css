@@ -1,0 +1,18 @@
+figure img {
+    max-width: 100%;
+    display: none;
+}
+
+figure img:target {
+    display: inline;
+}
+
+.slides-nav a {
+    
+}
+
+#slide-1:target ~ .slides-nav a[href="#slide-1"],
+#slide-2:target ~ .slides-nav a[href="#slide-2"],
+#slide-3:target ~ .slides-nav a[href="#slide-3"] {
+    color: green;
+}

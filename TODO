@@ -1,0 +1,78 @@
+Site Generation
+===============
+
+idea
+----
+build a pipeline in which input docs are converted to semantic html 5, then 
+presentation elements are added as needed to html docs, templates are applied,
+etc.
+any reference amongst docs should be kept in a db and be statically checked at
+compile time to avoid broken links.
+
+tools
+-----
+* haskell, blaze html, hxt, web routes, hakyll, shake
+* also consider alternatives: https://wiki.haskell.org/Web/Libraries
+
+NB
+--
+files in media currently copied over as follows: avatar-slides.svg from
+diagrams; avatar.svg from avatar/dark.transparent.svg;  copyleft.svg and
+groupoid.svg from icons.
+I then modified media/avatar-slides.svg to make it work with the css slider:
+  + made all Inkscape layers visible;
+  + added style:
+    <style>
+    svg > g {
+      display: none;
+    }
+    svg > g:target {
+      display: block;
+    }
+    </style>
+Also I merged index.semantic.html manually into index.html.
+All this will have to be handled by the site generation pipeline.
+
+
+Handling of SVG
+===============
+
+icons (and shared graphics)
+-----
+* one icon per layer
+* each layer can define its own viewbox if needed
+* icon file linked from html, not embedded
+* icons used by adding object tag to html doc
+  (svg + use only works in firefox unless the svg file is embedded just after
+   body tag)
+* adding of object tag will be done by a filter in the site generation pipeline
+* icons styled using css
+
+page-specific graphics (e.g. diagrams)
+----------------------
+* embed svg into html
+* reference graphic elements by means of svg+use
+* style in css
+
+slides
+------
+* generate css slider with a filter in the site generation pipeline
+
+SVG processing
+--------------
+* each icon could actually be kept in its own file and a pipeline filter could
+  merge all files together
+* ditto for other graphics
+* also need a pipeline filter to inject following css in layered svg so that 
+  only referenced layer is shown:  
+  <defs>
+    <style>
+    svg > g {
+      display: none;
+    }
+    svg > g:target {
+      display: block;
+    }
+    </style>
+  </defs>
+ * find out if removing width & height from svg tag is actually needed

@@ -1,0 +1,7 @@
+#wrapper {
+    margin: auto;
+    max-width:1000px;
+}
+p {
+    max-width: 600px;
+} 

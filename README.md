@@ -1,2 +1,2 @@
 # c0c0n3.github.io
-cocone blog
+one day this will be cocone's blog...

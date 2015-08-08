@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS Slider</title>
+  <meta charset="utf-8"/>
+
+  <link rel="stylesheet" type="text/css" href="http://necolas.github.io/normalize.css/latest/normalize.css"/>
+  <link rel="stylesheet" type="text/css" href="test.css"/>
+</head>
+<body>
+  <figure>
+    <img id="slide-1" src="1.svg" alt="slide desc 1"/>
+    <img id="slide-2" src="2.svg" alt="slide desc 2"/>
+    <img id="slide-3" src="3.svg" alt="slide desc 3"/>
+
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         width="500"
+         height="100"
+         viewBox="0 0 500 100">
+
+      <a xlink:href="#slide-1">
+        <rect id="btn-1" y="5" x="5" width="10" height="10" fill="#ff0000" />
+      </a>
+      <a xlink:href="#slide-2">
+        <rect id="btn-2" y="5" x="25" width="10" height="10" fill="#00ff00" />
+      </a>
+      <a xlink:href="#slide-3">
+        <rect id="btn-3" y="5" x="45" width="10" height="10" fill="#0000ff" />
+      </a>
+      
+    </svg>
+  </figure>
+</body>
+</html>
+
