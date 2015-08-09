@@ -16,12 +16,19 @@ tools
 
 NB
 --
-files in media currently copied over as follows: avatar-slides.svg from
-diagrams; avatar.svg from avatar/dark.transparent.svg;  copyleft.svg and
-groupoid.svg from icons.
-I then modified media/avatar-slides.svg to make it work with the css slider:
-  + made all Inkscape layers visible;
-  + added style:
+site generation is not automated. This is what I've done:
+
+ 1. copy files:
+     avatar/dark.transparent.svg    -> media/avatar.svg
+     diagrams/avatar-slides.svg     -> media/     
+     icons/{copyleft, groupoid}.svg -> media/ 
+
+ 2. in diagrams, run: split-layers avatar-slides.svg
+    then: mv avatar-slides.{1,2,3}.svg ../media/
+
+ 3. Edit media/avatar-slides.* to make all Inkscape layers visible
+
+ 4. Edit media/avatar-slides.svg to make it work with SVG fragments, add style:
     <style>
     svg > g {
       display: none;
@@ -30,7 +37,15 @@ I then modified media/avatar-slides.svg to make it work with the css slider:
       display: block;
     }
     </style>
-Also I merged index.semantic.html manually into index.html.
+
+    NB SVG fragments don't work in Android 4 and don't display properly in Safari
+       (view index.semantic.html); so using separate files for now in index.html.
+       Tried object tag with fragments but then you need to trigger the re-display
+       of a layer inside SVG after it has been viewed once; not worth doing now
+       as I'm going to embed page-specific SVG and use symbols instead...
+     
+ 5. merge index.semantic.html manually into index.html
+ 
 All this will have to be handled by the site generation pipeline.
 
 
@@ -50,8 +65,8 @@ icons (and shared graphics)
 
 page-specific graphics (e.g. diagrams)
 ----------------------
-* embed svg into html
-* reference graphic elements by means of svg+use
+* embed svg into html (svg doc only contains symbols)
+* reference graphic elements (symbols) by means of svg+use
 * style in css
 
 slides
@@ -71,8 +86,9 @@ SVG processing
       display: none;
     }
     svg > g:target {
-      display: block;
+      display: inline;
     }
     </style>
   </defs>
+  NB: this is not needed if using SVG symbols.
  * find out if removing width & height from svg tag is actually needed
